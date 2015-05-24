@@ -116,7 +116,7 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 
 		this.scroller = new JScrollPane();
 		this.myPanel = new JPanel(new MigLayout("",	"[]50[]","[]10[][][]"));
-		this.panel2 = new JPanel(new MigLayout("",	"[]25[]","[]20[][][]20"));
+		this.panel2 = new JPanel(new MigLayout("",	"[]25[]","[]20[10][][]20"));
 		btnPanel = new JPanel(new FlowLayout());
 		operationPanel = new JPanel(new MigLayout());
 		this.cAgent = cAgent;

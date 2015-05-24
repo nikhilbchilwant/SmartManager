@@ -15,7 +15,7 @@ public class Labels {
 		public static final String jobGenerateHeading = "Order details ";
 		public static final String jobPriority = "CPN :";
 		public static final String jobPenalty = "Penalty Rate (Rs./s)";
-		public static final String jobDueDate = "Desired due date";
+		public static final String jobDueDate = "Desired delivery date";
 		public static final String OrderID = "Order ID";
 		public static final String jobDimension = "Dimensions";
 		public static final String jobOperationHeading = "Operations ";

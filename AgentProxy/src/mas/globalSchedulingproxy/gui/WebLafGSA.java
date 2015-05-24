@@ -249,7 +249,7 @@ public class WebLafGSA {
 	}
 
 	public static void createCurrentJobInfoPanel(JobTile jobToShow){
-		MigLayout migLayout=new MigLayout("","200","[30]");
+		MigLayout migLayout=new MigLayout("","200","[30]10");
 		WebPanel detailsPanel=new WebPanel(migLayout);
 
 		final Format formatter = new SimpleDateFormat("d MMM yyyy HH:mm:ss");
@@ -275,7 +275,7 @@ public class WebLafGSA {
 		customerTxtlbl=new WebLabel("Customer ID");
 		customerlbl=new WebHotkeyLabel(jobToShow.getCustomerName());
 		
-		jobCustStartDateTxtlbl=new WebLabel("Batch Generation Date");
+		jobCustStartDateTxtlbl=new WebLabel("Order Generation Date");
 		jobCustStartDatelbl=new WebHotkeyLabel(formatter.format(jobToShow.getCustStartDate()));
 		//		jobCustStartDatelbl.setMinimumWidth(150);
 

@@ -93,9 +93,13 @@ public class Jobloader {
 	public Vector<String> getAcceptedJobTableHeader() {
 		Vector<String> headers = new Vector<String>();
 
-		for(int index = 0 ; index < tableHeaders.length ; index ++){
+		headers.add("Order ID");
+		headers.add("Order No.");
+		headers.add("Penalty (Rs./s)");
+		headers.add("Batch Count");
+		/*for(int index = 0 ; index < tableHeaders.length ; index ++){
 			headers.add(tableHeaders[index]);
-		}
+		}*/
 
 		headers.add("Due Date");
 		return headers;
@@ -108,9 +112,12 @@ public class Jobloader {
 	public Vector<String> getCompleteJobTableHeader() {
 		Vector<String> headers = new Vector<String>();
 
-		for(int index = 0 ; index < tableHeaders.length ; index ++){
+		headers.add("Order ID");
+		headers.add("Order No.");
+		headers.add("Batch Count");
+	/*	for(int index = 0 ; index < tableHeaders.length ; index ++){
 			headers.add(tableHeaders[index]);
-		}
+		}*/
 
 		headers.add("Completion Time");
 		return headers;

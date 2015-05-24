@@ -63,7 +63,7 @@ public class CustomerProxyGUI extends JFrame {
 	private JButton createJob;
 	private CustomerAgent cAgent;
 	private JTabbedPane tPanes;
-	private String[] tabTitles = {"Create","In progress", "Completed"};
+	private String[] tabTitles = {"Create order","Orders in progress", "Completed orders"};
 	private JPanel[] panelsForTab;
 
 	private Vector<String> acceptedJobTableHeaderVector;
@@ -330,9 +330,9 @@ public class CustomerProxyGUI extends JFrame {
 	private void showGui() {
 		setTitle("Smart Manager :: " + cAgent.getLocalName());
 		setResizable(false);
-		//		setPreferredSize(new Dimension(800,800));
+		setMinimumSize(new Dimension(650,375));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		pack();
+//		pack();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int centerX = (int)screenSize.getWidth() / 2;
 		int centerY = (int)screenSize.getHeight() / 2;
@@ -521,12 +521,15 @@ public class CustomerProxyGUI extends JFrame {
 				value = j.getBatchId();
 				break;
 			case 1:
-				value = j.getPenaltyRate();
+				value = j.getBatchNumber();
 				break;
 			case 2:
-				value = j.getBatchCount();
+				value = j.getPenaltyRate();
 				break;
 			case 3:
+				value = j.getBatchCount();
+				break;
+			case 4:
 				value = j.getDueDateByCustomer();
 				break;
 			default:
@@ -566,15 +569,12 @@ public class CustomerProxyGUI extends JFrame {
 				value = j.getBatchId();
 				break;
 			case 1:
-				value = j.getCPN();
+				value = j.getBatchNumber();
 				break;
 			case 2:
-				value = j.getPenaltyRate();
-				break;
-			case 3:
 				value = j.getBatchCount();
 				break;
-			case 4:
+			case 3:
 				value = new Date(j.getCompletionTime());
 				break;
 			default:
