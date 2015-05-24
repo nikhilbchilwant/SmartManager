@@ -63,7 +63,7 @@ public class CustomerProxyGUI extends JFrame {
 	private JButton createJob;
 	private CustomerAgent cAgent;
 	private JTabbedPane tPanes;
-	private String[] tabTitles = {"Generator","In progress", "Completed"};
+	private String[] tabTitles = {"Create","In progress", "Completed"};
 	private JPanel[] panelsForTab;
 
 	private Vector<String> acceptedJobTableHeaderVector;
