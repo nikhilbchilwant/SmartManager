@@ -130,7 +130,7 @@ public class WebLafGSA {
 			}
 		}
 
-		this.welcomeScreenFrame=new WebFrame("Smart manager");
+		this.welcomeScreenFrame=new WebFrame("Smart Manager :: "+"Shop Floor Manager");
 		ImageIcon img = new ImageIcon("resources/smartManager.png","Logo icon");
 		welcomeScreenFrame.setIconImage(img.getImage());
 		this.layout=new BorderLayout();

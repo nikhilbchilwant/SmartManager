@@ -328,7 +328,7 @@ public class CustomerProxyGUI extends JFrame {
 	 * with desired size
 	 */
 	private void showGui() {
-		setTitle(cAgent.getLocalName());
+		setTitle("Smart Manager :: " + cAgent.getLocalName());
 		//		setPreferredSize(new Dimension(800,800));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();

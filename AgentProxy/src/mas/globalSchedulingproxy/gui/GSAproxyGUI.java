@@ -233,7 +233,7 @@ public class GSAproxyGUI extends JFrame{
 	}
 
 	private void showGui() {
-		setTitle(" Global Scheduling Agent ");
+		setTitle("Smart Manager :: "+"Shop Floor Manager");
 		setPreferredSize(new Dimension(800,600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();

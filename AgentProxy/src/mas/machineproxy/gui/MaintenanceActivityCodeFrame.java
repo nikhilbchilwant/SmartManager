@@ -68,7 +68,7 @@ public class MaintenanceActivityCodeFrame extends JFrame {
 
 	private void showGui() {
 
-		setTitle(" Enter Activity Code ");
+		setTitle("Smart Manager :: "+" Maintenance details");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setPreferredSize(new Dimension(300,200));
 		pack();

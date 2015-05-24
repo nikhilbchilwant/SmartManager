@@ -278,7 +278,7 @@ public class UpdateOperationDbGUI extends JFrame implements WindowListener {
 	}
 
 	private void showGui() {
-		setTitle("Update Job Operation Database");
+		setTitle("Smart Manager :: "+"Job Operation Database");
 		setPreferredSize(new Dimension(width, height));
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		pack();

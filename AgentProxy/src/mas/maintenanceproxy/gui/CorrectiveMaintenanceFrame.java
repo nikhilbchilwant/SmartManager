@@ -77,7 +77,7 @@ public class CorrectiveMaintenanceFrame extends JFrame{
 	 */
 	private void showGui() {
 		
-		setTitle(" Machine Failed ");
+		setTitle("Smart Manager :: "+" Machine Failure ");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setPreferredSize(new Dimension(300,200));
 		pack();
