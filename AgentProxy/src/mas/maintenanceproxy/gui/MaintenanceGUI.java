@@ -222,6 +222,7 @@ public class MaintenanceGUI extends JFrame {
 	 */
 	private void showGui() {
 		setTitle("Smart Manager :: "+" Maintenance Module # " + mAgent.getLocalName().split("#")[1] );
+		setResizable(false);
 		setPreferredSize(new Dimension(800,600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();

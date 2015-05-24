@@ -486,7 +486,8 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 	 * with desired size
 	 */
 	private void showGui() {
-		setTitle("Customer - Negotiation Job");
+		setTitle("Smart Manager :: Negotiation");
+		setResizable(false);
 		//		setPreferredSize(new Dimension(600,500));
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		pack();

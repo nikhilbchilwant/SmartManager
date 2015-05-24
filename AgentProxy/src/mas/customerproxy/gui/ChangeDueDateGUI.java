@@ -427,7 +427,7 @@ public class ChangeDueDateGUI extends JFrame{
 	 * with desired size
 	 */
 	private void showGui() {
-		setTitle("Customer - Change Due Date");
+		setTitle("Smart Manager :: Customer - Change Due Date");
 		//		setPreferredSize(new Dimension(600,500));
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		pack();

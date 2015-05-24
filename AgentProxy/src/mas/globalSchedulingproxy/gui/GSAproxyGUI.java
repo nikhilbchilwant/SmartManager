@@ -234,6 +234,8 @@ public class GSAproxyGUI extends JFrame{
 
 	private void showGui() {
 		setTitle("Smart Manager :: "+"Shop Floor Manager");
+		setResizable(false);
+		setResizable(false);
 		setPreferredSize(new Dimension(800,600));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();

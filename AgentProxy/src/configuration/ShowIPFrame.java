@@ -39,6 +39,7 @@ public class ShowIPFrame extends JFrame {
 		
 		this.agent = a;
 		setTitle("IP configuration");
+		setResizable(false);
 		setLayout(new MigLayout());
 		JLabel msg = new JLabel("Enter IP address");
 		JLabel msg2 = new JLabel("Enter Jade port");
@@ -97,6 +98,7 @@ public class ShowIPFrame extends JFrame {
 	
 	private void showGui() {
 		setTitle("IP configuration");
+		setResizable(false);
 //		setPreferredSize(new Dimension(600,500));
 		
 		String propFileName = "mas.properties";

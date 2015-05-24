@@ -122,7 +122,8 @@ public class ConfigFrame extends JFrame {
 	}
 
 	private void showGui() {
-		setTitle("Configuration Screen");
+		setTitle("SmartM Manager :: Configuration Screen");
+		setResizable(false);
 		//		setPreferredSize(new Dimension(600,500));
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

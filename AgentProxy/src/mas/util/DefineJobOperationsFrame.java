@@ -221,6 +221,7 @@ public class DefineJobOperationsFrame extends JFrame{
 
 	private void showGui() {
 		setTitle("Smart Manager :: "+" Job Operation details ");
+		setResizable(false);
 		setPreferredSize(new Dimension(700,500));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		pack();

@@ -27,19 +27,19 @@ public class Jobloader {
 
 	private String jobFilePath;
 	private ArrayList<String> jobIdList;
-	private ArrayList<Double> jobCPNs;
+//	private ArrayList<Double> jobCPNs;
 	private ArrayList<Integer> jobQuantity;
 	private ArrayList<Double> jobPenaltyRate;
 	int countJob = 1;
 	private String localName;
 
-	private String[] tableHeaders = {"Batch ID", "CPN" , "Penalty Rate", "Batch Count"};
+	private String[] tableHeaders = {"Batch ID"/*, "CPN"*/ , "Penalty Rate", "Batch Count"};
 
 	public Jobloader(String str) {
 		this.localName = str;
 		this.jobIdList = new ArrayList<String>();
 		this.jobQuantity = new ArrayList<Integer>();
-		this.jobCPNs = new ArrayList<Double>();
+//		this.jobCPNs = new ArrayList<Double>();
 		this.jobPenaltyRate = new ArrayList<Double>();
 		this.sheets = new ArrayList<XSSFSheet>();
 		this.jobFilePath = "resources/customer/";
@@ -66,7 +66,7 @@ public class Jobloader {
 
 			batch.setBatchNumber(countJob++);
 			batch.setJobsInBatch(jobsList);
-			batch.setCPN(this.jobCPNs.get(index));
+//			batch.setCPN(this.jobCPNs.get(index));
 			batch.setPenaltyRate(this.jobPenaltyRate.get(index));
 			jobs.add(batch);
 		}
@@ -163,9 +163,6 @@ public class Jobloader {
 				jobQuantity.add((int) cell.getNumericCellValue());
 				break;
 			case 2:
-				jobCPNs.add(cell.getNumericCellValue());
-				break;
-			case 3:
 				jobPenaltyRate.add(cell.getNumericCellValue());
 				break;
 			}

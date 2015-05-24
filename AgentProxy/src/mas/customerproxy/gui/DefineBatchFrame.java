@@ -69,7 +69,7 @@ public class DefineBatchFrame extends JFrame{
 
 	private JLabel lblHeading;
 	private JLabel lblJobID;
-	private JLabel lblCPN;
+//	private JLabel lblCPN;
 	private JLabel lblDueDate;
 	private JLabel lblOpsHeading;
 	private JLabel lblPenalty;
@@ -77,7 +77,7 @@ public class DefineBatchFrame extends JFrame{
 	private JButton btnOperationPlus;
 
 	private FormattedStringField txtJobID;
-	private FormattedDoubleField txtCPN;
+//	private FormattedDoubleField txtCPN;
 	private FormattedIntegerField txtNumOps;
 	private FormattedDoubleField txtPenalty;
 	private FormattedIntegerField txtBatchSize;
@@ -126,15 +126,15 @@ public class DefineBatchFrame extends JFrame{
 		}
 
 		this.lblHeading = new JLabel(Labels.CustomerLabels.jobGenerateHeading);
-		this.lblCPN = new JLabel(Labels.CustomerLabels.jobPriority);
+//		this.lblCPN = new JLabel(Labels.CustomerLabels.jobPriority);
 		this.lblDueDate = new JLabel(Labels.CustomerLabels.jobDueDate);
 		this.lblJobID = new JLabel(Labels.CustomerLabels.BatchID);
 		this.lblOpsHeading = new JLabel(Labels.CustomerLabels.jobOperationHeading);
 		this.lblPenalty = new JLabel(Labels.CustomerLabels.jobPenalty);
 		this.lblBatchSize = new JLabel(Labels.CustomerLabels.batchSize);
 
-		this.txtCPN = new FormattedDoubleField();
-		txtCPN.setColumns(Labels.defaultJTextSize);
+/*		this.txtCPN = new FormattedDoubleField();
+		txtCPN.setColumns(Labels.defaultJTextSize);*/
 
 		this.txtJobID = new FormattedStringField();
 		txtJobID.setColumns(Labels.defaultJTextSize);
@@ -158,8 +158,8 @@ public class DefineBatchFrame extends JFrame{
 		myPanel.add(lblJobID);
 		myPanel.add(txtJobID,"wrap");
 
-		myPanel.add(lblCPN);
-		myPanel.add(txtCPN,"wrap");
+//		myPanel.add(lblCPN);
+//		myPanel.add(txtCPN,"wrap");
 
 		myPanel.add(lblPenalty);
 		myPanel.add(txtPenalty,"wrap");
@@ -189,7 +189,8 @@ public class DefineBatchFrame extends JFrame{
 	private void _populate() {
 		if(populatingBatch != null) {
 			txtJobID.setText(populatingBatch.getBatchId() );
-			txtCPN.setText(String.valueOf(populatingBatch.getCPN()) );
+			txtJobID.setEditable(false);
+//			txtCPN.setText(String.valueOf(populatingBatch.getCPN()) );
 			txtPenalty.setText(String.valueOf(populatingBatch.getPenaltyRate()) );
 			txtNumOps.setText(String.valueOf(populatingBatch.getFirstJob().getOperations().size()) );
 		}
@@ -224,7 +225,7 @@ public class DefineBatchFrame extends JFrame{
 				boolean x2 = false,x3 = true,x4 = true,x5 = true;
 				x2 = checkPenaltyRate();
 				if(x2) {
-					x3 = checkCPN();
+//					x3 = checkCPN();
 				}
 				populatingBatch.setGenerationTime(new Date());
 //				populatingBatch.setBatchNumber(CustomerProxyGUI.countBatch);
@@ -245,7 +246,7 @@ public class DefineBatchFrame extends JFrame{
 			boolean x2 = true,x3 = true,x4 = true,x5 = true;
 			x2 = checkPenaltyRate();
 			if(x2) {
-				x3 = checkCPN();
+//				x3 = checkCPN();
 			}
 			populatingBatch.setGenerationTime(new Date());
 //			populatingBatch.setBatchNumber(CustomerProxyGUI.countBatch);
@@ -334,11 +335,11 @@ public class DefineBatchFrame extends JFrame{
 		}
 		return status;
 	}
-
-	/**
+/*
+	*//**
 	 * @return True if CPN entered by customer is valid. Otherwise show an error message and return false
 	 * . Sets value of CPN of batch to the value in the field, if in proper format.
-	 */
+	 *//*
 	private boolean checkCPN() {
 		boolean status = true;
 		if(! txtCPN.getText().matches("-?\\d+(\\.\\d+)?") ) {
@@ -356,7 +357,7 @@ public class DefineBatchFrame extends JFrame{
 					txtCPN.getText() ) );
 		}
 		return status;
-	}
+	}*/
 
 	/**
 	 * @return True if the batch size is a valid integer
@@ -470,6 +471,7 @@ public class DefineBatchFrame extends JFrame{
 	 */
 	private void showGui() {
 		setTitle(" Define Job ");
+		setResizable(false);
 		setPreferredSize(new Dimension(700,500));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		pack();

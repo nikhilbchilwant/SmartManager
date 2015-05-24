@@ -584,6 +584,7 @@ public class MachineGUI extends JFrame {
 
 	private void showGui() {
 		setTitle("Smart Manager :: Machine#" + lAgent.getLocalName().split("#")[1]);
+		setResizable(false);
 		setJMenuBar(createMenuBar());
 		setPreferredSize(windowSize);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

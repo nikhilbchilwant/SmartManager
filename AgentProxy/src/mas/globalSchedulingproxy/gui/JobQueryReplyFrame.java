@@ -138,6 +138,7 @@ public class JobQueryReplyFrame extends JFrame{
 
 	private void showGui() {
 		setTitle("Smart Manager :: "+" Batch Status ");
+		setResizable(false);
 //		setPreferredSize(new Dimension(700,500));
 		pack();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

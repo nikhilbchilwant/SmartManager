@@ -63,7 +63,7 @@ public class CustomerProxyGUI extends JFrame {
 	private JButton createJob;
 	private CustomerAgent cAgent;
 	private JTabbedPane tPanes;
-	private String[] tabTitles = {"Generator","Confirmed Job", "Completed Jobs"};
+	private String[] tabTitles = {"Generator","In progress", "Completed"};
 	private JPanel[] panelsForTab;
 
 	private Vector<String> acceptedJobTableHeaderVector;
@@ -329,6 +329,7 @@ public class CustomerProxyGUI extends JFrame {
 	 */
 	private void showGui() {
 		setTitle("Smart Manager :: " + cAgent.getLocalName());
+		setResizable(false);
 		//		setPreferredSize(new Dimension(800,800));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
@@ -475,14 +476,14 @@ public class CustomerProxyGUI extends JFrame {
 				value = j.getBatchId();
 				break;
 			case 1:
-				value = j.getCPN();
-				break;
-			case 2:
 				value = j.getPenaltyRate();
 				break;
-			case 3:
+			case 2:
 				value = j.getBatchCount();
 				break;
+/*			case 3:
+				value = j.getBatchCount();
+				break;*/
 			default:
 				value = "not_found";
 				break;
@@ -520,15 +521,12 @@ public class CustomerProxyGUI extends JFrame {
 				value = j.getBatchId();
 				break;
 			case 1:
-				value = j.getCPN();
-				break;
-			case 2:
 				value = j.getPenaltyRate();
 				break;
-			case 3:
+			case 2:
 				value = j.getBatchCount();
 				break;
-			case 4:
+			case 3:
 				value = j.getDueDateByCustomer();
 				break;
 			default:
