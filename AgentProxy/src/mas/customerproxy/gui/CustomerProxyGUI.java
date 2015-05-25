@@ -226,7 +226,7 @@ public class CustomerProxyGUI extends JFrame {
 					}
 				});
 		
-		ImageIcon img2 = new ImageIcon("resources/IITDlogo.png");
+		ImageIcon img2 = new ImageIcon("resources/smartManagerBanner.png");
 		IITDlogolabel = new JLabel(""
 				, img2, JLabel.CENTER);
 		

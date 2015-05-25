@@ -165,7 +165,7 @@ public class WebLafGSA {
 		menu.setPreferredSize(new Dimension((int)width, 100));
 		bottomButtons=getButtons();
 		
-		ImageIcon img2 = new ImageIcon("resources/IITDlogo.png");
+		ImageIcon img2 = new ImageIcon("resources/smartManagerBanner.png");
 		JLabel label = new JLabel(""
 				, img2, JLabel.CENTER);
 //		JPanel panel = new JPanel(new BorderLayout());

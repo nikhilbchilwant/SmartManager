@@ -121,7 +121,7 @@ public class MaintenanceGUI extends JFrame {
 	}
 
 	private void initIITDlogo(){
-		ImageIcon img2 = new ImageIcon("resources/IITDlogo.png");
+		ImageIcon img2 = new ImageIcon("resources/smartManagerBanner.png");
 		IITDlogolabel = new JLabel(""
 				, img2, JLabel.CENTER);
 	}
