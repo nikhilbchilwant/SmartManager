@@ -401,8 +401,8 @@ public class CustomerProxyGUI extends JFrame {
 			}
 		}
 		
-		showNotification("Order Completed for "+cAgent.getLocalName(), "Order with ID "+j.getBatchId()+
-				" completed ",MessageType.INFO); 
+		showNotification("Order Completed ", "Order Completed for "+cAgent.getLocalName()+
+				", Order ID : "+j.getBatchId(),MessageType.INFO); 
 	}
 
 	/*

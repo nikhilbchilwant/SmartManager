@@ -144,7 +144,7 @@ public class JobSchedulingTickerBehavior extends TickerBehaviour {
 			log.info("update new queue in the machine gui " + newQ);
 			if(gui != null) {
 				gui.updateQueue(newQ);
-				gui.showNotification("Scheduling", "Scheduling of batches complete", MessageType.INFO);
+				gui.showNotification("Resequencing", "Scheduling of batches complete", MessageType.INFO);
 			}
 
 			reset(LocalSchedulingAgent.schedulingPeriod);

@@ -124,16 +124,16 @@ public class QueryFromLSA extends Behaviour implements PlanBody {
 				case ID.GlobalScheduler.requestType.cancelBatch:
 					weblafGSAgui.cancelBatchUnderProcess(response.getCurrentBatch());
 	
-					WebLafGSA.showNotification("Batch cancelled","Batch No. "+response.getCurrentBatch().getBatchNumber()+
-							" cancelled",MessageType.WARNING );
+					WebLafGSA.showNotification("Order cancelled","Order No. "+response.getCurrentBatch().getBatchNumber()+"Order ID : "+
+					response.getCurrentBatch().getBatchNumber()+" cancelled",MessageType.WARNING );
 	
 	
 					break;
 	
 				case ID.GlobalScheduler.requestType.changeDueDate:
 					weblafGSAgui.cancelBatchUnderProcess(response.getCurrentBatch());
-					WebLafGSA.showNotification("Request","Batch No. "+response.getCurrentBatch().getBatchNumber()+
-							" requested for due date change",MessageType.INFO );
+					WebLafGSA.showNotification("Request","Order No. "+response.getCurrentBatch().getBatchNumber()+
+							" requested change in delivery date",MessageType.INFO );
 	
 					ZoneDataUpdate dueDateRequest=new ZoneDataUpdate.Builder(ID.GlobalScheduler.ZoneData.
 							dueDateChangeBatches).value(response.getCurrentBatch()).Build();

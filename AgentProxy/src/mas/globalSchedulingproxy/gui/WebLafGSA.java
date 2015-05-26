@@ -792,8 +792,8 @@ public class WebLafGSA {
 		
 		completedJobRenderer.addBatch(b);
 		completedJobListTable.repaint();
-		String msg="Batch No. "+b.getBatchNumber()+" completed";
-		showNotification("Batch Completed",msg, MessageType.INFO);
+		String msg="Order No. "+b.getBatchNumber()+" ID :"+b.getBatchId()+" completed";
+		showNotification("Order Completed",msg, MessageType.INFO);
 
 		completedJobsList.repaint();
 	}
@@ -808,8 +808,8 @@ public class WebLafGSA {
 		
 		CurrJobListRenderer.addBatch(order);
 		currentJobListTable.repaint();
-		String msg="Batch No. "+order.getBatchNumber()+" accepted";
-		showNotification("New Batch",msg, MessageType.INFO);
+		String msg="Order No. "+order.getBatchNumber()+" ID : "+order.getBatchId()+" accepted";
+		showNotification("New Order",msg, MessageType.INFO);
 		currentJobList.repaint();
 	}
 
@@ -825,7 +825,8 @@ public class WebLafGSA {
 		negotiationJobListTable.revalidate();
 		negotiationJobListTable.repaint();
 
-		String msg="Bid recieved for batch no. "+jobUnderNegotiation.getBatchNumber();
+		String msg="Bid recieved for order no. "+jobUnderNegotiation.getBatchNumber()
+				+" ID : "+jobUnderNegotiation.getBatchId();
 		showNotification("New Bid", msg, MessageType.INFO);
 	}
 

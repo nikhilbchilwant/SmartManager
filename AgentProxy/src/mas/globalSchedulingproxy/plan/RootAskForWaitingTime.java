@@ -201,8 +201,8 @@ public class RootAskForWaitingTime extends Behaviour implements PlanBody {
 						value(JobToSend).Build();
 
 				AgentUtil.sendZoneDataUpdate(blackboard, rejectionUpdate, myAgent);	
-				String message = "Batch with ID " + JobToSend.getBatchId() + " is Rejected";
-				WebLafGSA.showNotification("Batch Rejected", message, MessageType.INFO);
+				String message = "Order with ID " + JobToSend.getBatchId() + " is rejected";
+				WebLafGSA.showNotification("Order Rejected", message, MessageType.INFO);
 			}
 			else{
 				log.info("sending waiting time: " + CumulativeWaitingTime + " ms" + " : " 
@@ -216,8 +216,9 @@ public class RootAskForWaitingTime extends Behaviour implements PlanBody {
 
 				AgentUtil.sendZoneDataUpdate(blackboard, NegotiationUpdate, myAgent);
 
-				WeblafGSAgui.showNotification("Order", JobToSend.getCustomerId()+
-						" placed order for order with ID "+JobToSend.getBatchId(), MessageType.INFO);
+				WeblafGSAgui.showNotification("Expected Delivery date sent", "Delivery date for "+
+						"order No."+JobToSend.getBatchNumber()+"order ID "+JobToSend.getBatchId(),
+						MessageType.INFO);
 
 			}
 			step = 5;
