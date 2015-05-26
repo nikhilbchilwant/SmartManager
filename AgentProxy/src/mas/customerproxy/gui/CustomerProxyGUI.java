@@ -391,7 +391,16 @@ public class CustomerProxyGUI extends JFrame {
 		TableUtil.setColumnWidths(completedJobsTable);
 		completedJobsTable.revalidate();
 		completedJobsTable.repaint();
-
+		
+		for(int i=0;i<=acceptedBatchVector.size();i++){
+			if(j.getBatchNumber()==((Batch)acceptedBatchVector.get(i)).getBatchNumber()){
+				acceptedBatchVector.remove(i);
+				TableUtil.setColumnWidths(acceptedBatchesTable);
+				acceptedBatchesTable.revalidate();
+				acceptedBatchesTable.repaint();
+			}
+		}
+		
 		showNotification("Order Completed for "+cAgent.getLocalName(), "Order with ID "+j.getBatchId()+
 				" completed ",MessageType.INFO); 
 	}

@@ -642,7 +642,7 @@ public class MachineGUI extends JFrame {
 	}
 	private JButton createIIDbutton() {
 	
-		JButton temp = new JButton("Developed by Indian Institute of Technology, Delhi");
+		JButton temp = new JButton("Website");
 
 		temp.addActionListener(new ActionListener() {
 	    	 
@@ -650,7 +650,7 @@ public class MachineGUI extends JFrame {
             {
             	URI linkToOpen = null;
 				try {
-					linkToOpen = new URI("http://www.iitd.ac.in/");
+					linkToOpen = new URI("http://smartmanager.bitbucket.org/");
 				} catch (URISyntaxException e1) {
 					e1.printStackTrace();
 				}
