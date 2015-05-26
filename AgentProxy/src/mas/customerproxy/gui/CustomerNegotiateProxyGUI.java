@@ -160,14 +160,15 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 
 		datePicker = new JDatePickerImpl(datePanel,
 				new DateLabelFormatter());
+		
 		dateListener date_Listener =new dateListener();//to disable confirm button
-		datePicker.addActionListener(date_Listener);
+		
 		
 		timeSpinner = new JSpinner( new SpinnerDateModel() );
 		JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "HH:mm:ss");
 		timeSpinner.setEditor(timeEditor);
 		timeSpinner.setValue(new Date());
-		timeSpinner.addChangeListener(date_Listener);
+		
 		
 		//		try {
 		//			plusButtonIcon = ImageIO.read(new File("resources/plusbutton.png"));
@@ -267,6 +268,10 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 		btnCancelNegotiation.addActionListener(clickListener);
 
 		_populate();
+		
+		datePicker.addActionListener(date_Listener);
+		timeSpinner.addChangeListener(date_Listener);
+		
 		scroller.setSize(panel2.WIDTH, scroller.HEIGHT);
 		add(mainPanel);
 		showGui();
@@ -293,7 +298,8 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 			Calendar c1 = Calendar.getInstance();
 			c1.setTime(populatingBatch.getDueDateByCustomer());
 
-//			timeSpinner.setValue(populatingBatch.getDueDateByCustomer());
+			timeSpinner.setValue(new Date(populatingBatch.getExpectedDueDate()));
+			
 
 			datePicker.getModel().
 			setDate(c1.get(Calendar.YEAR), c1.get(Calendar.MONTH), c1.get(Calendar.DAY_OF_MONTH));
