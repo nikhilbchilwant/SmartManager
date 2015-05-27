@@ -144,7 +144,6 @@ public class ChangeDueDateGUI extends JFrame{
 		timeSpinner = new JSpinner( new SpinnerDateModel() );
 		JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "HH:mm:ss");
 		timeSpinner.setEditor(timeEditor);
-		timeSpinner.setValue(new Date());
 
 		//		try {
 		//			plusButtonIcon = ImageIO.read(new File("resources/plusbutton.png"));
@@ -456,6 +455,8 @@ public class ChangeDueDateGUI extends JFrame{
 					new Thread(new Runnable() {
 						@Override
 						public void run() {
+							populatingBatch.setDueDateByCustomer
+							(populatingBatch.getDueDateByCustomer());
 							cAgent.confirmJob(populatingBatch);
 						}
 					}).start();

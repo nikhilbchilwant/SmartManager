@@ -167,7 +167,6 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 		timeSpinner = new JSpinner( new SpinnerDateModel() );
 		JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "HH:mm:ss");
 		timeSpinner.setEditor(timeEditor);
-		timeSpinner.setValue(new Date());
 		
 		
 		//		try {
@@ -298,9 +297,7 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 			Calendar c1 = Calendar.getInstance();
 			c1.setTime(populatingBatch.getDueDateByCustomer());
 
-//			timeSpinner.setValue(new Date(populatingBatch.getExpectedDueDate()));
-
-			
+			timeSpinner.setValue(populatingBatch.getDueDateByCustomer());
 
 			datePicker.getModel().
 			setDate(c1.get(Calendar.YEAR), c1.get(Calendar.MONTH), c1.get(Calendar.DAY_OF_MONTH));
@@ -560,6 +557,8 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 					new Thread(new Runnable() {
 						@Override
 						public void run() {
+							populatingBatch.setDueDateByCustomer
+							(new Date(populatingBatch.getExpectedDueDate()));
 							cAgent.confirmJob(populatingBatch);
 						}
 					}).start();

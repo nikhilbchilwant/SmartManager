@@ -138,7 +138,7 @@ public class NegotiationInfo {
 		timeSpinner = new JSpinner( new SpinnerDateModel() );
 		JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "HH:mm:ss");
 		timeSpinner.setEditor(timeEditor);
-		timeSpinner.setValue(new Date());
+		timeSpinner.setValue(new Date(populatingBatch.getExpectedDueDate()));
 
 		//		try {
 		//			plusButtonIcon = ImageIO.read(new File("resources/plusbutton.png"));
@@ -369,7 +369,7 @@ public class NegotiationInfo {
 
 				status = false;
 			}else {
-				populatingBatch.setDueDateByCustomer(calTime.getTime());
+				populatingBatch.setExpectedDueDate(calTime.getTime().getTime());
 			}
 		}
 		return status;
