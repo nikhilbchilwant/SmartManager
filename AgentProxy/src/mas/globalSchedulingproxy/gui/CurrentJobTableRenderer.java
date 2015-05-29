@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.Format;
 import java.text.SimpleDateFormat;
+
 import javax.swing.AbstractCellEditor;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -16,11 +17,15 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
+
 import mas.globalSchedulingproxy.goal.QueryJobGoal;
+import mas.util.AgentUtil;
 import mas.util.ID;
 import net.miginfocom.swing.MigLayout;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import com.alee.extended.menu.DynamicMenuType;
 import com.alee.extended.menu.WebDynamicMenu;
 import com.alee.extended.menu.WebDynamicMenuItem;
@@ -63,9 +68,9 @@ public class CurrentJobTableRenderer extends AbstractCellEditor implements Table
 		dueDate.setText("Due date : "+formatter.format(jobTileInCell.getCustDueDate()));
 //		startDate.setText("Start Date : "+formatter.format(jobTileInCell.getCustStartDate()));
 //		more.setText("more");
-		priorityText.setText("Priority : "+ Integer.toString((int)jobTileInCell.getPriority()));
+		priorityText.setText("Priority : "+ AgentUtil.showPriority((int)jobTileInCell.getPriority()));
 
-		PriorityNoText="<html><b>"+Integer.toString((int)jobTileInCell.getPriority())+"</b></html>";
+		PriorityNoText="<html><b>"+AgentUtil.showPriority((int)jobTileInCell.getPriority())+"</b></html>";
 		batchNo.setText("Batch No.: "+jobTileInCell.getBatch().getBatchNumber());
 		
 		tile.add(batchID);

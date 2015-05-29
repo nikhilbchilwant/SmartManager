@@ -171,6 +171,7 @@ import javax.swing.JTable;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 
+import mas.util.AgentUtil;
 import net.miginfocom.swing.MigLayout;
 
 import org.apache.logging.log4j.LogManager;
@@ -217,9 +218,9 @@ public class CompletedJobTableRenderer extends AbstractCellEditor implements Tab
 		dueDate.setText("Due date : "+formatter.format(jobTileInCell.getCustDueDate()));
 //		startDate.setText("Start Date : "+formatter.format(jobTileInCell.getCustStartDate()));
 //		more.setText("more");
-		priorityText.setText("Priority : "+ Integer.toString((int)jobTileInCell.getPriority()));
+		priorityText.setText("Priority : "+ AgentUtil.showPriority((int)jobTileInCell.getPriority()));
 
-		PriorityNoText="<html><b>"+Integer.toString((int)jobTileInCell.getPriority())+"</b></html>";
+		PriorityNoText="<html><b>"+AgentUtil.showPriority((int)jobTileInCell.getPriority())+"</b></html>";
 		batchNo.setText("Batch No.: "+jobTileInCell.getBatch().getBatchNumber());
 		
 		tile.add(batchID);

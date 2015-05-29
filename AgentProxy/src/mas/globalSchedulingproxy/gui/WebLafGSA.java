@@ -57,6 +57,7 @@ import com.alee.managers.hotkey.Hotkey;
 
 import mas.globalSchedulingproxy.agent.GlobalSchedulingAgent;
 import mas.jobproxy.Batch;
+import mas.util.AgentUtil;
 /**
  * 
  * Main GUI class for GSA
@@ -298,7 +299,7 @@ public class WebLafGSA {
 		//		durationlbl.setMinimumWidth(150);
 
 		priorityTextlbl=new WebLabel("Customer Priority");
-		prioritylbl=new WebHotkeyLabel(Integer.toString(jobToShow.getPriority()));
+		prioritylbl=new WebHotkeyLabel(AgentUtil.showPriority(jobToShow.getPriority()));
 		//		prioritylbl.setMinimumWidth(150);
 
 		/*		
@@ -416,7 +417,7 @@ public class WebLafGSA {
 		//		durationlbl.setMinimumWidth(150);
 
 		priorityTextlbl=new WebLabel("Priority");
-		prioritylbl=new WebHotkeyLabel(Integer.toString(jobTileInCell.getPriority()));
+		prioritylbl=new WebHotkeyLabel(AgentUtil.showPriority(jobTileInCell.getPriority()));
 		//		prioritylbl.setMinimumWidth(150);
 
 		/*		
