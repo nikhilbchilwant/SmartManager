@@ -391,13 +391,22 @@ public class CustomerProxyGUI extends JFrame {
 		TableUtil.setColumnWidths(completedJobsTable);
 		completedJobsTable.revalidate();
 		completedJobsTable.repaint();
-		
-		for(int i=0;i<=acceptedBatchVector.size();i++){
-			if(j.getBatchNumber()==((Batch)acceptedBatchVector.get(i)).getBatchNumber()){
+		int i=0;
+		int limit=acceptedBatchVector.size();
+
+		while(i<=limit){
+//		for(int i=0;i<=acceptedBatchVector.size();i++){
+			if(i<limit && j.getBatchNumber()==((Batch)acceptedBatchVector.get(i)).getBatchNumber()){
 				acceptedBatchVector.remove(i);
+				i=0;
+				limit=acceptedBatchVector.size();
+//				addCompletedBatch(j);//checks repetition
 				TableUtil.setColumnWidths(acceptedBatchesTable);
 				acceptedBatchesTable.revalidate();
 				acceptedBatchesTable.repaint();
+			}
+			else{
+				i++;
 			}
 		}
 		
