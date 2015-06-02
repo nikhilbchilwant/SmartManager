@@ -376,7 +376,7 @@ public class MachineGUI extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				lblMachineStatus.setText("Under Maintenance");
+				lblMachineStatus.setText("UNDER MAINTENANCE");
 				lblMachineStatus.setForeground(maintenanceColor);
 			}
 		});
@@ -436,7 +436,7 @@ public class MachineGUI extends JFrame {
 					// if the machine isn't loaded with some job, it can't be marked as failed
 					if(machineSimulator.getCurrentJob() == null) {
 						JOptionPane.showMessageDialog(MachineGUI.this, 
-								"Machine cannot fail while idle", "Dialog", JOptionPane.ERROR_MESSAGE);
+								"Machine cannot fail while idle", "Sorry, you can't do that", JOptionPane.ERROR_MESSAGE);
 					} else {
 						machineFailed();
 						btnFailMachineButton.setEnabled(false);
@@ -756,7 +756,7 @@ public class MachineGUI extends JFrame {
 				// if machine is loaded with some job, you cannot start maintennace
 				if(machineSimulator.getCurrentJob() != null) {
 					JOptionPane.showMessageDialog(MachineGUI.this,
-							"Please unload the job first.", "Dialog", JOptionPane.ERROR_MESSAGE);
+							"Please unload the job first.", "Sorry, you can't do that", JOptionPane.ERROR_MESSAGE);
 				}else {
 					new Thread(new Runnable() {
 						@Override
@@ -817,7 +817,7 @@ public class MachineGUI extends JFrame {
 			public void run() {
 				unloadJobGui();
 				JOptionPane.showMessageDialog(MachineGUI.this,
-						"No batch to load from.", "Dialog", JOptionPane.INFORMATION_MESSAGE);
+						"No batch to load from.", "Sorry, you can't do that", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 	}
@@ -834,7 +834,8 @@ public class MachineGUI extends JFrame {
 			@Override
 			public void run() {
 				maintMsgPanel.setVisible(true);
-				JOptionPane.showMessageDialog(MachineGUI.this, msgToShow, "Dialog", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(MachineGUI.this, msgToShow, "Warning",
+						JOptionPane.WARNING_MESSAGE);
 				showNotification("Machine Paused", "Maintenance is pending.", MessageType.WARNING);
 				revalidate();
 				repaint();
@@ -872,7 +873,8 @@ public class MachineGUI extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				JOptionPane.showMessageDialog(MachineGUI.this, msgToShow, "Dialog", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(MachineGUI.this, msgToShow, "Warning"
+						, JOptionPane.WARNING_MESSAGE);
 				showNotification("Maintenance Job", "Maintenance is Pending.", MessageType.WARNING);				
 			}
 		});

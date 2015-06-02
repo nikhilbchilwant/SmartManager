@@ -28,7 +28,7 @@ public class PMSchedulePanel extends JPanel {
 	private int interval = 500;
 
 	public PMSchedulePanel() {
-		lblHeading = new JLabel("<html><h1>Time remaining for next Schedule :</h1></html>");
+		lblHeading = new JLabel("<html>Next maintenance is scheduled after</html>");
 		lblNextSchedule = new JLabel("<html><h1></h1></html>");
 
 		add(lblHeading);
