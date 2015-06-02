@@ -291,6 +291,7 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 
 //			txtCPN.setText(String.valueOf(populatingBatch.getCPN()));
 			txtPenaltyRate.setText(String.valueOf(populatingBatch.getPenaltyRate()));
+			txtPenaltyRate.setEnabled(false);
 
 			txtNumOps.setText(String.valueOf(populatingBatch.getFirstJob().getOperations().size()));
 
@@ -303,6 +304,7 @@ public class CustomerNegotiateProxyGUI extends JFrame{
 			setDate(c1.get(Calendar.YEAR), c1.get(Calendar.MONTH), c1.get(Calendar.DAY_OF_MONTH));
 
 			txtBatchSize.setText(String.valueOf(populatingBatch.getBatchCount()));
+			txtBatchSize.setEnabled(false);
 
 			ArrayList<jobOperation> ops = populatingBatch.getFirstJob().getOperations();
 			operationPanel.removeAll();
