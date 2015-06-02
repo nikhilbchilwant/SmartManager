@@ -29,6 +29,7 @@ import mas.globalSchedulingproxy.agent.GlobalSchedulingAgent;
 import mas.jobproxy.Batch;
 import mas.jobproxy.job;
 import mas.jobproxy.jobOperation;
+import mas.util.AgentUtil;
 import mas.util.DateLabelFormatter;
 import mas.util.TableUtil;
 import mas.util.formatter.doubleformatter.FormattedDoubleField;
@@ -265,7 +266,7 @@ public class NegotiationInfo {
 			txtWaitingTime.setText(String.valueOf(populatingBatch.getDueDateByCustomer())) ;
 			txtWaitingTime.setEnabled(false);
 
-			txtCPN.setText(String.valueOf(populatingBatch.getCPN()));
+			txtCPN.setText(AgentUtil.showPriority((int)populatingBatch.getCPN()));
 			txtCPN.setEnabled(false);
 			txtPenaltyRate.setText(String.valueOf(populatingBatch.getPenaltyRate()));
 			txtPenaltyRate.setEnabled(false);
