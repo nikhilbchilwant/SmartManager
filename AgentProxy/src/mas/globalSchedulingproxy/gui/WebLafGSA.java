@@ -169,11 +169,11 @@ public class WebLafGSA {
 		bottomButtons=getButtons();
 		
 		ImageIcon img2 = new ImageIcon("resources/smartManagerBanner.png");
-		JLabel label = new JLabel(""
+		JLabel logo_label = new JLabel(""
 				, img2, JLabel.CENTER);
 //		JPanel panel = new JPanel(new BorderLayout());
 //		panel.add( label, BorderLayout.CENTER );
-		menu.add(label, FlowLayout.LEFT);
+		menu.add(logo_label, FlowLayout.LEFT);
 		
 		for(int i=0;i<bottomButtons.length;i++){
 			menu.add(bottomButtons[i]);	
