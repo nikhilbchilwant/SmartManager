@@ -580,32 +580,7 @@ public class WebLafGSA {
 		
 		buttons[2]=JobManager;
 
-		/* 		JButton signOut = new JButton();
-	    Image signOutImg = null;
-	 		try {
-	 			signOutImg = ImageIO.read (new File("resources/signOut.png"));
-	 		} catch (IOException e) {
-	 			e.printStackTrace();
-	 		}
-	 		signOut.setIcon(new ImageIcon( signOutImg));
-	 		signOut.setPreferredSize(new Dimension(90,90));
-	 		signOut.setActionCommand("signOut");
 
-	 		signOut.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e){
-				 	if(currentJobList!=null){
-	            		MainPanel.remove(currentJobList);
-	            		currentJobList=null;
-	            		log.info("currentJobList "+"is not null");
-
-
-	            	}
-	            	else{
-	            	}
-	            }
-	        });
-
- 		buttons[3]=signOut;*/
 
 		completedJobs = new WebToggleButton();
 		Image CompletedJobsImg = null;
@@ -639,19 +614,47 @@ public class WebLafGSA {
 	}
 
 	protected static void createAndShowAboutWindow() {
+				ImageIcon showProfileIcon = new ImageIcon("resources/linkedIn_viewmy_120x33.png",
+						"View LinkedIn profile");
 				JFrame developersFrame = new JFrame("Developers");
 				developersFrame.setLayout(new MigLayout());
 				developersFrame.setIconImage(smartManagerWinIcon.getImage());	
-//				String[][] namesData={{"Nikhil Chilwant","2011ME20769"},{"Anand Prajapati", "2011ME20764"},
-//				{"Rohit Kumar","2010ME20797"},{"Viplov Arora","2010ME20807"},{"Pranam Bansal","2010me20786"}
-//				,{"Pankaj Kumawat","2010me20784"}};
 				
 				JPanel devCreditPanel = new JPanel(new MigLayout());
 //				devCreditPanel.add(new WebHotkeyLabel("<html><b>Core developers</b></html>"),"wrap");
 				devCreditPanel.add(new JLabel("<html><p>Nikhil Chilwant</p></html>"));
-				devCreditPanel.add(new JButton("L"), "wrap");
+
+				JButton NikhilViewProfile = new JButton();
+				NikhilViewProfile.setIcon(showProfileIcon);
+				NikhilViewProfile.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e){
+						URI linkToOpen = null;
+						try {
+							linkToOpen = new URI("https://in.linkedin.com/pub/nikhil-chilwant/98/676/973");
+						} catch (URISyntaxException e1) {
+							e1.printStackTrace();
+						}
+						openWebpage(linkToOpen);
+				}
+			});  
+				devCreditPanel.add( NikhilViewProfile,"wrap");
+				
 				devCreditPanel.add(new JLabel("<html><p>Anand Prajapati</p></html>"));
-				devCreditPanel.add(new JButton("L"), "wrap");
+				JButton AnandViewProfile = new JButton();
+				AnandViewProfile.setIcon(showProfileIcon);
+				AnandViewProfile.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e){
+						URI linkToOpen = null;
+						try {
+							linkToOpen = new URI("https://in.linkedin.com/in/akprats");
+						} catch (URISyntaxException e1) {
+							e1.printStackTrace();
+						}
+						openWebpage(linkToOpen);
+				}
+			}); 
+				
+				devCreditPanel.add(AnandViewProfile,"wrap");
 				
 
 				
