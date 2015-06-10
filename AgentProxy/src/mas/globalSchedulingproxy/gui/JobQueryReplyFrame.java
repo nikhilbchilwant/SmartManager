@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import com.alee.extended.label.WebHotkeyLabel;
 
 import mas.jobproxy.Batch;
+import mas.util.AgentUtil;
 import mas.util.BatchQueryObject;
 import net.miginfocom.swing.MigLayout;
 import uiconstants.Labels;
@@ -78,7 +79,7 @@ public class JobQueryReplyFrame extends JFrame{
 
 		if(response != null && response.getCurrentBatch() != null ) {
 			Batch batch = response.getCurrentBatch();
-			lblCPN.setText(String.valueOf(batch.getCPN()) );
+			lblCPN.setText(AgentUtil.showPriority((int)batch.getCPN()));
 			lblBatchID.setText(batch.getBatchId());
 			lblDueDate.setText(String.valueOf(batch.getDueDateByCustomer()));
 			lblPenaltyRate.setText(String.valueOf(batch.getPenaltyRate()));
