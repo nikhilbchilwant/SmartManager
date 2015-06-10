@@ -123,7 +123,11 @@ public class QueryFromLSA extends Behaviour implements PlanBody {
 	
 				case ID.GlobalScheduler.requestType.cancelBatch:
 					weblafGSAgui.cancelBatchUnderProcess(response.getCurrentBatch());
-	
+					
+					ZoneDataUpdate OrderCancellation = new ZoneDataUpdate.Builder(ID.GlobalScheduler.ZoneData.
+							cancelledOrder).value(response.getCurrentBatch()).Build();
+					AgentUtil.sendZoneDataUpdate(blackboard_AID, OrderCancellation, myAgent);
+					
 					WebLafGSA.showNotification("Order cancelled","Order No. "+response.getCurrentBatch().getBatchNumber()+"Order ID : "+
 					response.getCurrentBatch().getBatchNumber()+" cancelled",MessageType.WARNING );
 	

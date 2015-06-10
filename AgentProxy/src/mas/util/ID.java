@@ -153,6 +153,8 @@ public class ID implements Serializable{
 			public static final String dueDateChangeBatches = "GSAbatchForDueDateChangeReq";
 
 			public static final String rejectedOrders = "rejected_orders"; 
+			
+			public static final String cancelledOrder = "cancelledOrder";
 		}
 
 		public class BeliefBaseConst {

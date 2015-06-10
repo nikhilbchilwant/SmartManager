@@ -68,6 +68,8 @@ public class RegisterCustomerAgentToBlackboardPlan extends OneShotBehaviour impl
 				MsgID(MessageIds.msgcustomerChangeDDorders).
 				appendValue(false).
 				build();
+		
+		
 
 		NamedZoneData[] ZoneDataNames =  { ZoneDataName1,
 				ZoneDataName2,ZoneDataName3, ZoneDataName4, ZoneDataName5 };
@@ -82,7 +84,8 @@ public class RegisterCustomerAgentToBlackboardPlan extends OneShotBehaviour impl
 				ID.GlobalScheduler.ZoneData.GSAConfirmedOrder,
 				ID.GlobalScheduler.ZoneData.completedJobByGSA ,
 				ID.GlobalScheduler.ZoneData.dueDateChangeBatches,
-				ID.GlobalScheduler.ZoneData.rejectedOrders};
+				ID.GlobalScheduler.ZoneData.rejectedOrders,
+				ID.GlobalScheduler.ZoneData.cancelledOrder};
 
 		subform.AddSubscriptionReq(target, params);
 

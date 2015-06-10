@@ -423,6 +423,28 @@ public class CustomerProxyGUI extends JFrame {
 		acceptedBatchesTable.revalidate();
 		acceptedBatchesTable.repaint();
 	}
+	
+	public void removeCancelledOrder(Batch j) {
+		int i=0;
+		int limit=acceptedBatchVector.size();
+
+		while(i<=limit){
+			if(i<limit && j.getBatchNumber()==((Batch)acceptedBatchVector.get(i)).getBatchNumber()){
+				acceptedBatchVector.remove(i);
+				i=0;
+				limit=acceptedBatchVector.size();
+				TableUtil.setColumnWidths(acceptedBatchesTable);
+				acceptedBatchesTable.revalidate();
+				acceptedBatchesTable.repaint();
+			}
+			else{
+				i++;
+			}
+		}
+		
+		showNotification("Order Cancelled", "Order cancellation request for Order No. : "+
+		j.getBatchNumber()+" has been processed.",MessageType.INFO); 
+	}
 
 	/*
 	 * action listener for menu options which are clicked on accepted batches

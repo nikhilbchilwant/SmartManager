@@ -128,7 +128,9 @@ public class MessageIds {
 
 	public static final String msgCallBackReqByGSA = "GSAReqForCallBack";
 
-	public static final String msgJobCompletion = "sendNotificationOfCompletedJob";
+	public static final String msgOrderCompletion = "sendNotificationOfCompletedJob";
+	
+	public static final String msgOrderCancellation = "Ordercancelled";
 
 	public static final String msgChangeDueDate = "change_due_date";
 

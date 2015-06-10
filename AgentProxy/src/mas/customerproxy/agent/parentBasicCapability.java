@@ -15,6 +15,7 @@ import mas.customerproxy.plan.CancelOrderPlan;
 import mas.customerproxy.plan.ChangeDueDate;
 import mas.customerproxy.plan.DispatchJobPlan;
 import mas.customerproxy.plan.HandleRejectedOrder;
+import mas.customerproxy.plan.ReceiveCancelledBatchPlan;
 import mas.customerproxy.plan.ReceiveCompletedBatchPlan;
 import mas.customerproxy.plan.RegisterCustomerAgentToBlackboardPlan;
 import mas.customerproxy.plan.SendConfirmedOrderPlan;
@@ -115,8 +116,11 @@ public class parentBasicCapability extends Capability {
 		plans.add(new SimplePlan(SendConfirmedOrderGoal.class,SendConfirmedOrderPlan.class));
 		plans.add(new SimplePlan(CancelOrderGoal.class,CancelOrderPlan.class) );
 
-		plans.add(new SimplePlan(MessageTemplate.MatchConversationId(MessageIds.msgJobCompletion),
+		plans.add(new SimplePlan(MessageTemplate.MatchConversationId(MessageIds.msgOrderCompletion),
 				ReceiveCompletedBatchPlan.class ));
+		
+		plans.add(new SimplePlan(MessageTemplate.MatchConversationId(MessageIds.msgOrderCancellation),
+				ReceiveCancelledBatchPlan.class ));
 
 		plans.add(new SimplePlan(MessageTemplate.MatchConversationId(MessageIds.msgChangeDueDate),
 				ChangeDueDate.class));

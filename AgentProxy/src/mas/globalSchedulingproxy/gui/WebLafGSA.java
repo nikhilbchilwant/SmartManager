@@ -785,6 +785,7 @@ public class WebLafGSA {
 		CurrentJobTableModel CurrjobListRenderer=
 				(CurrentJobTableModel)currentJobListTable.getModel();
 		CurrjobListRenderer.removeJob(batch);
+		
 		if(currentJobListTable.getCellEditor()!=null){
 			currentJobListTable.getCellEditor().stopCellEditing();
 			//solves cell updating bug
