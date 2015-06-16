@@ -617,10 +617,13 @@ public class WebLafGSA {
 				ImageIcon showProfileIcon = new ImageIcon("resources/linkedIn_viewmy_120x33.png",
 						"View LinkedIn profile");
 				JFrame developersFrame = new JFrame("Developers");
+				developersFrame.setResizable(false);
 				developersFrame.setLayout(new MigLayout());
 				developersFrame.setIconImage(smartManagerWinIcon.getImage());	
 				
-				JPanel devCreditPanel = new JPanel(new MigLayout());
+				JPanel devCreditPanel = new JPanel(new MigLayout("",
+						"",
+						"10[10]"));
 //				devCreditPanel.add(new WebHotkeyLabel("<html><b>Core developers</b></html>"),"wrap");
 				devCreditPanel.add(new JLabel("<html><p>Nikhil Chilwant</p></html>"));
 
@@ -655,12 +658,11 @@ public class WebLafGSA {
 			}); 
 				
 				devCreditPanel.add(AnandViewProfile,"wrap");
-				devCreditPanel.add(new JLabel("Visit http://smartmanager.bitbucket.org for more details."),"span 2");
+				devCreditPanel.add(new JLabel("<html>Visit <b>http://smartmanager.bitbucket.org</b>"
+						+ " for more details.</html>"),"span 2");
 
-				
 				developersFrame.add(devCreditPanel);
-				developersFrame.setMinimumSize(new Dimension(400,150));
-//				developersFrame.pack();
+				developersFrame.setMinimumSize(new Dimension(450,200));
 				
 				int centerX = (int)screenSize.getWidth() / 2;
 				int centerY = (int)screenSize.getHeight() / 2;
