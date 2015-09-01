@@ -1,12 +1,15 @@
 package mas.customerproxy.agent;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
+
 import mas.jobproxy.Batch;
 import mas.jobproxy.job;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -130,7 +133,7 @@ public class Jobloader {
 		XSSFWorkbook wb;
 		try{
 			FileInputStream file = new FileInputStream(this.jobFilePath +
-					"\\" + localName + ".xlsx");	
+					File.separator + localName + ".xlsx");	
 			wb = new XSSFWorkbook(file);
 
 			this.NumJobs = wb.getNumberOfSheets();

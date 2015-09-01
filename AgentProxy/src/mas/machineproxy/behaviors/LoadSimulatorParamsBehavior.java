@@ -2,11 +2,14 @@ package mas.machineproxy.behaviors;
 
 import jade.core.behaviours.OneShotBehaviour;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
+
 import mas.machineproxy.Simulator;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
@@ -34,7 +37,7 @@ public class LoadSimulatorParamsBehavior extends OneShotBehaviour{
 		this.filePath = System.getProperty("user.dir");
 		try {
 			InputStream fStream = new FileInputStream (filePath + 
-					"\\" + fileName); 
+					File.separator + fileName); 
 
 			workBook = new XSSFWorkbook(fStream); 
 
